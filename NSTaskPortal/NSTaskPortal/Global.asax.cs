@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NSTaskPortal.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,6 +14,8 @@ namespace NSTaskPortal
     {
         protected void Application_Start()
         {
+
+            Database.SetInitializer<NSTaskPortal.Models.NSTaskPortalContext>(new DropCreateDatabaseIfModelChanges<NSTaskPortal.Models.NSTaskPortalContext>());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

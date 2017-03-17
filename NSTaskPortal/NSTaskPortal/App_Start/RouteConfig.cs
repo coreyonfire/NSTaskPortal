@@ -14,6 +14,12 @@ namespace NSTaskPortal
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Config",
+                url: "Config/{action}/{id}",
+                defaults: new { controller = "Config", action = "Edit", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "CurrentDueDate",
                 url: "CurrentDueDate/{action}/{id}",
                 defaults: new { controller = "CurrentDueDate", action = "CurrentDueDate", id = UrlParameter.Optional }

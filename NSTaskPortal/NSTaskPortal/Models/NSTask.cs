@@ -8,22 +8,26 @@ namespace NSTaskPortal.Models
 {
     public class NSTask
     {
+        public enum taskTypeEnum { Support, Project };
+
         [Key]
         public int NSTaskID { get; set; }
         public string Name { get; set; }
         public double Hours { get; set; }
         public String AssignedTo { get; set; }
+        public taskTypeEnum TaskType { get; set; }
 
         public NSTask() : this(0, "NO TITLE PROVIDED", 0.0, "NOT ASSIGNED")
         {
             //
         }
-        public NSTask(int t = 0, string n = "NO TITLE PROVIDED", double h = 0.0, string a = "NOT ASSIGNED")
+        public NSTask(int t = 0, string n = "NO TITLE PROVIDED", double h = 0.0, string a = "NOT ASSIGNED", int type = 0)
         {
             NSTaskID = t;
             Name = n;
             Hours = h;
             AssignedTo = a;
+            TaskType = type == 0 ? taskTypeEnum.Support : taskTypeEnum.Project;
         }
     }
 

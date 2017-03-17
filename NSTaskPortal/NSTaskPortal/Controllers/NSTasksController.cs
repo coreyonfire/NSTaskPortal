@@ -46,7 +46,7 @@ namespace NSTaskPortal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "NSTaskID,Name,Hours,AssignedTo")] NSTask nSTask)
+        public ActionResult Create([Bind(Include = "NSTaskID,Name,Hours,AssignedTo,TaskType")] NSTask nSTask)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace NSTaskPortal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NSTaskID,Name,Hours,AssignedTo")] NSTask nSTask)
+        public ActionResult Edit([Bind(Include = "NSTaskID,Name,Hours,AssignedTo,TaskType")] NSTask nSTask)
         {
             if (ModelState.IsValid)
             {
